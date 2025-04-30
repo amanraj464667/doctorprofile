@@ -23,7 +23,7 @@ export default function Home() {
 
   const handleAddDoctor = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/add-doctor', {
+      const res = await fetch('https://doctorprofile.onrender.com/api/add-doctor', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -62,7 +62,7 @@ export default function Home() {
       ...filters,
     }).toString();
 
-    const res = await fetch(`http://localhost:5000/api/list-doctor-with-filter?${query}`);
+    const res = await fetch(`https://doctorprofile.onrender.com/api/list-doctor-with-filter?${query}`);
     const data = await res.json();
     setDoctors(data.doctors);
   };
